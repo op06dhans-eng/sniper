@@ -31,12 +31,12 @@ html,body{margin:0;height:100%;background:#000;overflow:hidden;font-family:'Noto
 #info b{font-size:19px}
 #aip{right:calc(12px + env(safe-area-inset-right));top:74px;min-width:150px;font-size:15px;background:var(--pan);padding:7px 11px;border-radius:8px;border:1px solid rgba(255,178,62,.6);line-height:1.5;display:none}
 #aip b{color:var(--acc);font-size:16px}
-.radio{left:50%;bottom:14px;transform:translateX(-50%);width:min(760px,66vw);background:rgba(8,10,12,.84);border:1px solid var(--line);border-left:5px solid #8fd16a;border-radius:8px;padding:7px 13px;display:none;flex-direction:column;gap:2px;z-index:5}
+.radio{left:50%;bottom:14px;transform:translateX(-50%);width:min(760px,66vw);background:rgba(8,10,12,.58);border:1px solid var(--line);border-left:5px solid #8fd16a;border-radius:8px;padding:7px 13px;display:none;flex-direction:column;gap:2px;z-index:5}
 .radio .who{font-size:13px;color:#8fd16a;letter-spacing:.06em;display:flex;align-items:center;gap:8px}
 .radio .who svg{width:70px;height:16px}
 .radio .en{font-size:20px;color:#fff;font-family:'Segoe UI',Arial,sans-serif;font-weight:800;line-height:1.25}
 .radio .zh{font-size:17px;color:#dde3e8;line-height:1.3}
-.radio.side .en{font-size:17px}.radio.side .zh{font-size:15px}
+.radio.side .en{font-size:17px}.radio.side .zh{font-size:15px}.radio.side{padding:5px 10px}
 #btns{right:calc(14px + env(safe-area-inset-right));bottom:18px;display:flex;flex-direction:column;gap:10px;align-items:center;pointer-events:auto;z-index:6}
 .cb{width:84px;height:84px;border-radius:50%;border:3px solid rgba(255,255,255,.85);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:900;color:#fff;background:rgba(10,12,14,.55);text-shadow:0 1px 2px #000;cursor:pointer;flex-direction:column;line-height:1.1}
 .cb small{font-size:13px}
@@ -51,7 +51,7 @@ html,body{margin:0;height:100%;background:#000;overflow:hidden;font-family:'Noto
 #ammo i.e{opacity:.2}
 #ammo span{font-size:15px;margin-left:6px}
 #cue{left:50%;top:calc(50% + 40px);transform:translateX(-50%);font-size:17px;text-align:center;white-space:nowrap;padding:2px 10px;border-radius:6px}
-#toast{left:50%;top:22%;transform:translateX(-50%);font-size:21px;text-align:center;background:rgba(8,10,12,.86);border:2px solid var(--acc);border-radius:10px;padding:8px 16px;display:none;max-width:88vw;line-height:1.4;z-index:7}
+#toast{left:50%;top:22%;transform:translateX(-50%);font-size:21px;text-align:center;background:rgba(8,10,12,.6);border:2px solid var(--acc);border-radius:10px;padding:8px 16px;display:none;max-width:88vw;line-height:1.4;z-index:7}
 #rot{top:74px;left:50%;transform:translateX(-50%);font-size:14px;background:var(--pan);border:1px solid var(--line);border-radius:8px;padding:4px 10px;display:none;white-space:nowrap}
 .ov{position:fixed;inset:0;background:rgba(0,0,0,.8);display:none;align-items:center;justify-content:center;z-index:30;padding:14px;pointer-events:auto;touch-action:pan-y}
 .card{width:min(620px,94vw);max-height:92vh;max-height:92dvh;overflow:auto;-webkit-overflow-scrolling:touch;background:#15181b;border:1px solid #3c4248;border-radius:14px;padding:18px 20px;color:#fff;font-weight:700}
@@ -76,6 +76,8 @@ html,body{margin:0;height:100%;background:#000;overflow:hidden;font-family:'Noto
 .mlist button{text-align:left;justify-content:flex-start;width:100%}
 .mlist small{font-size:15px;color:#cfd5da;margin-left:8px;font-weight:700}
 #review .card{border:3px solid var(--red)}
+#brief{background:linear-gradient(90deg,rgba(0,0,0,.6) 0,rgba(0,0,0,.25) 55%,rgba(0,0,0,0) 100%);justify-content:flex-start;padding-left:calc(14px + env(safe-area-inset-left))}
+#brief .card{width:min(520px,56vw);background:rgba(18,21,24,.84);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)}
 @media (orientation:portrait){
  #btns{flex-direction:row-reverse;right:12px;bottom:calc(16px + env(safe-area-inset-bottom));align-items:flex-end}
  #bBreath{bottom:calc(16px + env(safe-area-inset-bottom))}
@@ -89,6 +91,9 @@ html,body{margin:0;height:100%;background:#000;overflow:hidden;font-family:'Noto
  #mis{font-size:16px}#mis small{font-size:13px}
  #timer{font-size:21px}
  #toast{top:30%}
+ #hp span{display:none}#hp{margin-right:2px;gap:3px}#hp i{width:9px;height:15px}#score{font-size:14px;margin-right:0}.ib{width:36px;height:36px}#tr{gap:4px}#top{gap:6px;padding-left:8px;padding-right:8px}
+ #brief{background:linear-gradient(0deg,rgba(0,0,0,.6) 0,rgba(0,0,0,.2) 60%,rgba(0,0,0,0) 100%);justify-content:center;align-items:flex-end;padding:12px}
+ #brief .card{width:94vw;max-height:62vh;max-height:62dvh}
 }
 @media (orientation:landscape) and (max-height:480px){
  #top{padding-bottom:6px}
@@ -101,7 +106,7 @@ html,body{margin:0;height:100%;background:#000;overflow:hidden;font-family:'Noto
  #btns{gap:7px;bottom:10px}
  #bBreath{bottom:10px}
  #ammo{left:calc(92px + env(safe-area-inset-left));bottom:14px}#ammo i{height:28px;width:8px}
- .radio{width:min(560px,58vw);bottom:8px;padding:5px 10px}.radio .en{font-size:16px}.radio .zh{font-size:14px}
+ .radio{width:min(560px,58vw);bottom:8px;padding:5px 10px}.radio .en{font-size:16px}.radio .zh{font-size:14px}.radio.side .en{font-size:15px}.radio.side .zh{font-size:13px}
  #cue{font-size:15px;top:calc(50% + 26px)}
  #toast{font-size:17px;top:18%}
  .card{padding:12px 16px}.card h1{font-size:24px}.card h2{font-size:20px;margin-bottom:4px}.card p,.card li{font-size:15px;margin:4px 0}.card .law,.card .ai,.card .tru{font-size:15px;padding:6px 10px;margin:5px 0}.card .src{font-size:12px}.stat{font-size:15px;margin:4px 0}.big{font-size:28px}.btn{min-height:40px;font-size:16px}
@@ -563,6 +568,10 @@ const POSE={
  shopbag:{R:v3(.27,-.05,0),L:v3(-.24,-.03,.02),Rp:v3(.2,0,1),Lp:v3(-.2,0,1),item:'shopbag',hand:'R',ho:v3(0,-.17,0),freeL:1},
  phone:{R:v3(.11,.66,-.05),L:v3(-.24,-.03,.02),Rp:v3(.9,-.8,.2),Lp:v3(-.2,0,1),item:'phone',hand:'R',ho:v3(0,0,0),freeL:1},
  up:{R:v3(.26,.99,-.04),L:v3(-.26,.99,-.04),Rp:v3(1,0,.2),Lp:v3(-1,0,.2)},
+ rifleOverhead:{R:v3(.24,1.0,-.12),L:v3(-.24,1.0,-.12),Rp:v3(1,-.2,.3),Lp:v3(-1,-.2,.3),item:'rifle',ia:v3(.36,1.05,-.12),ib:v3(-.62,1.05,-.14)},
+ rifleLower:{R:v3(.22,.22,-.36),L:v3(-.22,.22,-.38),Rp:v3(1,-.6,.3),Lp:v3(-1,-.6,.3),item:'rifle',ia:v3(.45,.22,-.4),ib:v3(-.51,.22,-.42)},
+ rifleGround:{R:v3(.2,-.34,-.46),L:v3(-.2,-.34,-.47),Rp:v3(.8,0,.6),Lp:v3(-.8,0,.6),item:'rifle',ia:v3(.45,-.4,-.5),ib:v3(-.51,-.4,-.52)},
+ handsHead:{R:v3(.1,.74,.06),L:v3(-.1,.74,.06),Rp:v3(1,.1,.1),Lp:v3(-1,.1,.1)},
  hmg:{R:v3(.1,.28,-.45),L:v3(-.1,.28,-.45),Rp:v3(1,-1,0),Lp:v3(-1,-1,0)},
  dig:{R:v3(.12,-.08,-.42),L:v3(-.12,-.06,-.44),Rp:v3(.8,0,.6),Lp:v3(-.8,0,.6),item:'rifle',ia:v3(.22,.62,.2),ib:v3(-.24,-.12,.2)},
  staff:{R:v3(.3,.32,-.26),L:v3(-.24,-.03,.02),Rp:v3(.6,-1,.4),Lp:v3(-.2,0,1),item:'staff',ia:v3(.31,1.0,-.28),ib:v3(.31,-.95,-.24),freeL:1},
@@ -609,7 +618,7 @@ function todo(p,...ts){p.tasks.push(...ts);return p}
 function clearTasks(p){p.tasks.length=0;p.task=null;p.path=null}
 const tWalk=(pts,speed,gait)=>({t:'walk',pts,speed:speed||1.25,gait:gait||'walk'}),tWait=(d)=>({t:'wait',d}),tPose=(v,item)=>({t:'pose',v,item}),tLegs=(v)=>({t:'legs',v}),tFace=(x,z)=>({t:'face',x,z}),tFn=(f)=>({t:'fn',f}),tLook=(x,z)=>({t:'look',x,z});
 function runTasks(p,dt){if(!p.task){if(!p.tasks.length){if(p.beh)p.beh(p,dt);if(!p.tasks.length)return}p.task=p.tasks.shift();p.tt=0;const t=p.task;
-  if(t.t==='walk'){p.path=t.pts.map(q=>new V(q[0],0,q[1]));p.pi=0;p.speedT=t.speed;p.gait=t.gait}
+  if(t.t==='walk'){p.path=t.pts.map(q=>new V(q[0],0,q[1]));p.pi=0;p.speedT=t.speed;p.gait=t.gait;p.back=!!t.back}
   if(t.t==='pose'){p.pose=t.v;if(t.item!==undefined)p.itemOverride=t.item;p.task=null;return}
   if(t.t==='legs'){p.legs=t.v;p.task=null;return}
   if(t.t==='face'){p.faceTo=t.x==null?null:new V(t.x,0,t.z);p.task=null;return}
@@ -630,9 +639,9 @@ function updPerson(p,dt,now){if(p.hidden||p.win){return}
   // 移動
   let wantV=0;if(p.path){const t=p.path[p.pi];const dx=t.x-p.root.position.x,dz=t.z-p.root.position.z,d=Math.hypot(dx,dz);
    if(d<.18){p.pi++;if(p.pi>=p.path.length){p.path=null;if(p.task&&p.task.t==='walk')p.task=null}}
-   else{wantV=p.speedT;if(p.pi===p.path.length-1&&d<1.2)wantV*=Math.max(.35,d/1.2);p.yawT=Math.atan2(-dx,-dz)}}
+   else{wantV=p.speedT;if(p.pi===p.path.length-1&&d<1.2)wantV*=Math.max(.35,d/1.2);p.mvYaw=Math.atan2(-dx,-dz);p.yawT=p.back?p.mvYaw+PI:p.mvYaw}}
   p.speed+=(wantV-p.speed)*Math.min(1,dt*(wantV>p.speed?3:5));
-  if(p.speed>.02){const yaw=p.root.rotation.y;p.vel.set(-Math.sin(p.yawT)*p.speed,0,-Math.cos(p.yawT)*p.speed);p.root.position.x+=p.vel.x*dt;p.root.position.z+=p.vel.z*dt}else p.vel.set(0,0,0);
+  if(p.speed>.02){const my=p.back?p.yawT-PI:p.yawT;p.vel.set(-Math.sin(my)*p.speed,0,-Math.cos(my)*p.speed);p.root.position.x+=p.vel.x*dt;p.root.position.z+=p.vel.z*dt}else p.vel.set(0,0,0);
   if(!p.path&&p.faceTo)p.yawT=Math.atan2(-(p.faceTo.x-p.root.position.x),-(p.faceTo.z-p.root.position.z));
   p.root.rotation.y+=angDiff(p.yawT,p.root.rotation.y)*Math.min(1,dt*(p.speed>.5?6:3.2));
   if(!p.fixY){const gy=groundY(p.root.position.x,p.root.position.z);p.root.position.y+=(gy-p.root.position.y)*Math.min(1,dt*14)}}
@@ -647,7 +656,7 @@ function updPerson(p,dt,now){if(p.hidden||p.win){return}
  if(p.down){hy=.3;hp=.5}p.headYaw+=(hy-p.headYaw)*Math.min(1,dt*3);p.headPitch+=(hp-p.headPitch)*Math.min(1,dt*3);
  p.swayT+=dt;p.gestT+=dt;
  // 身高（給命中判定與人工智慧框用）
- const crouchAmt=(.95-p.leg.hy)/.5;p.h=(1.78-Math.max(0,crouchAmt)*.62+(p.pose==='up'?.22:0))*p.sc;if(p.down)p.h=.45}
+ const crouchAmt=(.95-p.leg.hy)/.5;p.h=(1.78-Math.max(0,crouchAmt)*.62+(p.pose==='up'||p.pose==='rifleOverhead'?.34:0))*p.sc;if(p.down)p.h=.45}
 // ---------- 兩段式手臂反向運動（肩→肘→手） ----------
 function armIK(S,T,pole,outE,outT){const d=_v1.subVectors(T,S);let Ld=d.length();const max=ARM_A+ARM_B-.002;if(Ld>max){d.multiplyScalar(max/Ld);Ld=max}if(Ld<.05){d.set(0,-.05,0);Ld=.05}const dn=_v2.copy(d).divideScalar(Ld);
  const x=(ARM_A*ARM_A-ARM_B*ARM_B+Ld*Ld)/(2*Ld),h=Math.sqrt(Math.max(0,ARM_A*ARM_A-x*x));const pl=_v3.copy(pole).addScaledVector(dn,-pole.dot(dn));if(pl.lengthSq()<1e-6)pl.set(0,0,1);pl.normalize();
@@ -787,7 +796,7 @@ const trunkM=std({color:0x6a5440,roughness:.95}),frondM=std({color:0x5a6a2e,roug
 const leafM=std({color:0x56653a,roughness:.9,flatShading:true}),leafM2=std({color:0x4e6a36,roughness:.9,flatShading:true}),treeTrunk=std({color:0x5a4632,roughness:.9});
 function palm(x,z,h,par){const g=new THREE.Group();g.position.set(x,groundY(x,z),z);par.add(g);let p=new V(0,0,0);const lean=new V(frand(-.06,.06),1,frand(-.06,.06)).normalize();for(let i=0;i<5;i++){const q=p.clone().addScaledVector(lean,h/5);limb(g,p,q,.17-i*.015,trunkM,.18-i*.015);p=q}
  for(let k=0;k<9;k++){const a=k/9*PI*2;const f=new THREE.Mesh(new THREE.PlaneGeometry(.55,2.6,1,3),frondM);const pa=f.geometry.attributes.position;for(let i=0;i<pa.count;i++){const y=pa.getY(i);pa.setZ(i,-Math.pow((y+1.3)/2.6,2)*.9)}f.geometry.translate(0,1.3,0);f.position.copy(p);f.rotation.set(0,-a,0);f.rotateX(-1.0);f.castShadow=true;g.add(f)}}
-function tree(x,z,par,big){const y0=groundY(x,z);const s=big?1.3:1;C(.13*s,.2*s,3.4*s,treeTrunk,par,7).position.set(x,y0+1.7*s,z);for(let i=0;i<3;i++){const t=P(new THREE.IcosahedronGeometry(rnd(1.2,1.8)*s,1),chance(.5)?leafM:leafM2,par);t.position.set(x+rnd(-.8,.8)*s,y0+rnd(3.7,4.7)*s,z+rnd(-.8,.8)*s)}}
+function tree(x,z,par,big){const y0=groundY(x,z);const s=big?1.3:1;addOBB(x,y0+4.25*s,z,1.45*s,.95*s,1.45*s,0);C(.13*s,.2*s,3.4*s,treeTrunk,par,7).position.set(x,y0+1.7*s,z);for(let i=0;i<3;i++){const t=P(new THREE.IcosahedronGeometry(rnd(1.2,1.8)*s,1),chance(.5)?leafM:leafM2,par);t.position.set(x+rnd(-.8,.8)*s,y0+rnd(3.7,4.7)*s,z+rnd(-.8,.8)*s)}}
 function nearSight(x,z){for(const K of KS){const a=EYE,b=K;const t=Math.max(0,Math.min(1,((x-a.x)*(b.x-a.x)+(z-a.z)*(b.z-a.z))/((b.x-a.x)**2+(b.z-a.z)**2)));const px=a.x+(b.x-a.x)*t,pz=a.z+(b.z-a.z)*t,py=a.y+(b.y-a.y)*t;if(Math.hypot(px-x,pz-z)<3.2&&py<6.5)return true}return false}
 // ---------- 視線保留 ----------
 function sightBlocked(x,z,w,d,ry,h){const m=new THREE.Matrix4().compose(new V(x,0,z),new THREE.Quaternion().setFromAxisAngle(new V(0,1,0),ry),new V(1,1,1)).invert();const bx=new THREE.Box3(new V(-w/2-.4,0,-d/2-.4),new V(w/2+.4,h,d/2+.4));const r=new THREE.Ray();
@@ -933,7 +942,7 @@ function buildTown(li){const L=LAYOUTS[li];TL=L;TOWN=li;disposeTown();if(BOX0<0)
  {const stG=new THREE.Group();S.add(stG);const sp=L.stallA?L.stallA.map(a=>[Math.cos(a*PI)*(HUB.type==='park'?RO+1.6:RO+RSW+3.5),Math.sin(a*PI)*(HUB.type==='park'?RO+1.6:RO+RSW+3.5)]):L.stallP;
   for(const [dx,dz] of sp){const x=C0.x+dx,z=C0.z+dz;if(onAnyRoad(x,z,1))continue;const y0=groundY(x,z);const g=new THREE.Group();g.position.set(x,y0,z);g.rotation.y=HUB.type==='square'?0:Math.atan2(C0.x-x,C0.z-z);stG.add(g);
    B(1.8,.9,.9,std({color:0x6a4a2a,roughness:.9}),g).position.y=.45;for(let i=0;i<6;i++)B(.25,.12,.25,pick([std({color:0xc84a2a}),std({color:0x8ab040}),std({color:0xe0b030})]),g).position.set(-.65+i*.26,.96,frand(-.2,.2));
-   C(.03,.03,2.4,metalM,g,6).position.y=1.2;const um=new THREE.Mesh(new THREE.ConeGeometry(1.4,.5,10,1,true),pick(clothM));um.position.y=2.45;g.add(um);STALLS.push({x,z,ry:g.rotation.y});COVO.push(addOBB(x,y0+.45,z,.9,.45,.45,g.rotation.y))}bake(stG)}
+   C(.03,.03,2.4,metalM,g,6).position.y=1.2;const um=new THREE.Mesh(new THREE.ConeGeometry(1.4,.5,10,1,true),pick(clothM));um.position.y=2.45;g.add(um);STALLS.push({x,z,ry:g.rotation.y});addOBB(x,y0+2.45,z,1.05,.22,1.05,0);COVO.push(addOBB(x,y0+.45,z,.9,.45,.45,g.rotation.y))}bake(stG)}
  bake(palmG);
  flush(TG=new THREE.Group());
  for(const c of S.children.slice())if(!before.has(c)&&c!==TG)TG.add(c);S.add(TG);
@@ -941,7 +950,7 @@ function buildTown(li){const L=LAYOUTS[li];TL=L;TOWN=li;disposeTown();if(BOX0<0)
  for(const c of PCARS){const o=c.obb;if(c.col==='burned'&&chance(.5))continue;if(hubD(o.c.x,o.c.z)>75&&roadDist(RM,o.c.x,o.c.z).d>14)continue;if(!COVO.includes(o))COVO.push(o)}
  for(const o of COVO){const d=new V(o.c.x-EYE.x,0,o.c.z-EYE.z).normalize(),pp=new V(-d.z,0,d.x);const ax=new V(Math.cos(o.ry),0,-Math.sin(o.ry)),az=new V(Math.sin(o.ry),0,Math.cos(o.ry));
   const ed=Math.abs(d.dot(ax))*o.hx+Math.abs(d.dot(az))*o.hz,ep=Math.abs(pp.dot(ax))*o.hx+Math.abs(pp.dot(az))*o.hz;
-  for(const sd of[-1,1]){const p=new V(o.c.x,0,o.c.z).addScaledVector(d,ed+.55).addScaledVector(pp,sd*ep);if(hubD(p.x,p.z)>80&&roadDist(RM,p.x,p.z).d>16)continue;if(roadDist(RM,p.x,p.z).d<RM.w/2+.3)continue;if(BOXES.some(b=>obbHas(b,new V(p.x,.8,p.z))))continue;if(p.z>-30)continue;COVER.push({x:p.x,z:p.z,o,taken:null})}}
+  for(const sd of[-1,1]){const p=new V(o.c.x,0,o.c.z).addScaledVector(d,ed+.55).addScaledVector(pp,sd*(ep+.2));if(hubD(p.x,p.z)>80&&roadDist(RM,p.x,p.z).d>16)continue;if(roadDist(RM,p.x,p.z).d<RM.w/2+.3)continue;if(BOXES.some(b=>obbHas(b,new V(p.x,.8,p.z))))continue;if(p.z>-30)continue;const gy=groundY(p.x,p.z);let okc=true;for(const o2 of[0,.25,-.25]){const q2=p.clone().addScaledVector(d,o2);if(!losClear(q2.x,gy+.72,q2.z)||!losClear(q2.x,gy+1.05,q2.z)||!losClear(q2.x,gy+1.55,q2.z))okc=false}if(!okc)continue;COVER.push({x:p.x,z:p.z,o,taken:null})}}
  // 可能出現人影的窗戶：面向我、視線沒被擋、在可轉動範圍內
  WINC=WINC.filter(w=>{const t=w.p.clone().addScaledVector(w.n,.35);const dv=t.clone().sub(EYE);const L=dv.length();if(L<60||L>270)return false;const yaw=Math.atan2(-dv.x,-dv.z),pit=Math.asin(dv.y/L);if(Math.abs(yaw)>.66||pit<-.26||pit>.07)return false;const hn=Math.hypot(dv.x,dv.z);if((w.n.x*-dv.x+w.n.z*-dv.z)/hn<.45)return false;
   const ray=new THREE.Ray(EYE.clone(),dv.normalize());for(const b of BOXES){const tt=obbRay(ray,b);if(tt!==null&&tt<L-.2)return false}return true});
@@ -962,7 +971,7 @@ function centerSquare(L){const hx=HUB.hx,hz=HUB.hz;const pv=new THREE.Mesh(new T
  // 中央噴水池
  const fg=new THREE.Group();fg.position.copy(C0);S.add(fg);const mc=std({map:concT,color:0xd0c8b8,roughness:.85});
  const bs=P(new THREE.CylinderGeometry(3.4,3.5,.6,32),mc,fg);bs.position.y=.3;const wt=P(new THREE.CircleGeometry(3.1,32),waterM,fg);wt.rotation.x=-PI/2;wt.position.y=.52;C(.45,.6,1.6,mc,fg,12).position.y=1.3;const bw=P(new THREE.CylinderGeometry(1.3,.5,.4,20),mc,fg);bw.position.y=2.2;C(.15,.2,1.1,mc,fg,8).position.y=2.9;
- bake(fg);COVO.push(addOBB(C0.x,.3,C0.z,3.3,.3,3.3,0));stampDisc(C0.x,C0.z,3,3.5,.6);
+ bake(fg);COVO.push(addOBB(C0.x,.3,C0.z,3.3,.3,3.3,0));addOBB(C0.x,1.85,C0.z,1.1,1.25,1.1,0);stampDisc(C0.x,C0.z,3,3.5,.6);
  // 四角的樹與燈
  for(const [sx,sz] of[[-1,-1],[1,-1],[-1,1],[1,1]]){const x=C0.x+sx*(hx-3),z=C0.z+sz*(hz-3);if(!nearSight(x,z))palm(x,z,frand(6,7.5),palmG);LAMPS.push(new V(C0.x+sx*(hx-6),6,C0.z+sz*(hz-6)))}
  {const lp=new THREE.Group();S.add(lp);const lm=std({color:0x3a3c3e,roughness:.5,metalness:.6});for(const [sx,sz] of[[-1,-1],[1,-1],[-1,1],[1,1]]){const x=C0.x+sx*(hx-6),z=C0.z+sz*(hz-6);C(.08,.12,6,lm,lp,6).position.set(x,3,z);B(.5,.2,.5,lm,lp).position.set(x,6,z)}bake(lp)}
@@ -975,17 +984,17 @@ function centerCross(L){const cp2=(dx,dz)=>[C0.x+dx,C0.z+dz];
  {const g=new THREE.Group();const [x,z]=cp2(21,-18);g.position.set(x,0,z);S.add(g);const cm=std({color:0xe2ded4,roughness:.6}),red=std({color:0xa82a1e,roughness:.6});
   B(13,.6,8.5,cm,g).position.y=4.9;B(13.1,.35,8.6,red,g).position.y=4.55;for(const sx of[-5,5])for(const sz of[-3,3])C(.18,.18,4.4,metalM,g,8).position.set(sx,2.2,sz);
   for(const sx of[-3,3]){B(1.1,.25,3.4,concM,g).position.set(sx,.12,0);for(const sz of[-.9,.9]){B(.55,1.5,.4,std({color:0xd8d4cc,roughness:.5}),g).position.set(sx,1,sz);B(.5,.3,.42,red,g).position.set(sx,1.6,sz)}}
-  bake(g);COVO.push(addOBB(x-3,.8,z,.6,.8,1.7,0),addOBB(x+3,.8,z,.6,.8,1.7,0));reserve(x,z,14,9,0);
+  bake(g);COVO.push(addOBB(x-3,.8,z,.6,.8,1.7,0),addOBB(x+3,.8,z,.6,.8,1.7,0));addOBB(x,4.85,z,6.5,.35,4.3,0);reserve(x,z,14,9,0);
   const sg=new THREE.Group();sg.position.set(C0.x+11,0,C0.z-11);S.add(sg);C(.14,.14,6,metalM,sg,8).position.y=3;B(1.8,1.2,.2,red,sg).position.y=6.2;bake(sg);LAMPS.push(new V(x-4,4.3,z),new V(x+4,4.3,z),new V(x,4.3,z-3));
 }
  // 西北角：倉庫與貨櫃
- warehouse(C0.x-32,C0.z-30,24,16,8,0);container(C0.x-13,0,C0.z-17,.3);container(C0.x-13.4,2.56,C0.z-17.2,.25);container(C0.x-21,0,C0.z-13,PI/2+.1);
+ warehouse(C0.x-32,C0.z-30,24,16,8,0);container(C0.x-27,0,C0.z-16,.08);container(C0.x-27.3,2.56,C0.z-16.2,.05);container(C0.x-36,0,C0.z-12,PI/2+.1);
  // 東南角：空地、棧板、貨櫃（牧羊人走的地方要空著）
  container(C0.x+33,0,C0.z+27,.1);container(C0.x+33,2.56,C0.z+27.2,.15);{const pg=new THREE.Group();S.add(pg);const wd=std({color:0x8a6a44,roughness:.95});for(let k=0;k<6;k++){B(1.2,.15,1,wd,pg).position.set(C0.x+28+rnd(-1,1),.08+(k%3)*.16,C0.z+16+Math.floor(k/3)*1.4)}bake(pg)}
  // 工業區圍籬
  {const fg=new THREE.Group();S.add(fg);const fm=std({color:0x6a6e70,roughness:.6,metalness:.5});for(const [x0,z0,x1,z1] of[[-44,-12,-16,-12],[40,-10,40,-40],[14,36,44,36]]){const n=Math.ceil(Math.hypot(x1-x0,z1-z0)/3);for(let k=0;k<=n;k++){const u=k/n;C(.04,.04,2,fm,fg,5).position.set(C0.x+x0+(x1-x0)*u,1,C0.z+z0+(z1-z0)*u)}const a=new V(C0.x+x0,0,C0.z+z0),b=new V(C0.x+x1,0,C0.z+z1);const m=B(a.distanceTo(b),.05,.05,fm,fg);m.position.copy(a).add(b).multiplyScalar(.5).setY(1.9);m.rotation.y=-Math.atan2(b.z-a.z,b.x-a.x)}bake(fg)}
  // 水塔
- {const wg=new THREE.Group();wg.position.set(C0.x-48,0,C0.z-50);S.add(wg);for(const [sx,sz] of[[-1,-1],[1,-1],[-1,1],[1,1]])C(.15,.15,14,metalM,wg,6).position.set(sx*1.6,7,sz*1.6);const t=C(2.6,2.6,4,std({color:0x8a8478,roughness:.6,metalness:.4}),wg,16);t.position.y=16;bake(wg)}}
+ {const wg=new THREE.Group();wg.position.set(C0.x-48,0,C0.z-50);S.add(wg);for(const [sx,sz] of[[-1,-1],[1,-1],[-1,1],[1,1]])C(.15,.15,14,metalM,wg,6).position.set(sx*1.6,7,sz*1.6);const t=C(2.6,2.6,4,std({color:0x8a8478,roughness:.6,metalness:.4}),wg,16);t.position.y=16;bake(wg);addOBB(C0.x-48,16,C0.z-50,2.6,2,2.6,0)}}
 function centerPark(L){const ring=new THREE.Mesh(new THREE.RingGeometry(RI,RO,96,1),asphM);ring.rotation.x=-PI/2;ring.position.set(C0.x,.035,C0.z);ring.receiveShadow=true;roadsG.add(ring);
  const isl=new THREE.Mesh(new THREE.CylinderGeometry(RI,RI,.2,96,1,true),curbM);isl.position.set(C0.x,.1,C0.z);roadsG.add(isl);const top=new THREE.Mesh(new THREE.CircleGeometry(RI,96),lawnM);top.rotation.x=-PI/2;top.position.set(C0.x,.2,C0.z);roadsG.add(top);stampDisc(C0.x,C0.z,0,RI,.2);
  // 環狀步道與十字步道
@@ -993,7 +1002,7 @@ function centerPark(L){const ring=new THREE.Mesh(new THREE.RingGeometry(RI,RO,96
  for(const a of[PI*.5,0,PI,PI*1.5]){const p=new THREE.Mesh(new THREE.PlaneGeometry(RI-1,2.2),stoneM);p.rotation.x=-PI/2;p.rotation.z=-a;p.position.set(C0.x+Math.cos(a)*(RI/2+.2),.214,C0.z+Math.sin(a)*(RI/2+.2));roadsG.add(p)}
  ringWalk(RO,RO+RSW);
  // 涼亭（中央）
- {const g=new THREE.Group();g.position.set(C0.x,.2,C0.z);S.add(g);const wm=std({color:0xd8d0c0,roughness:.8}),rm=std({color:0x7a4a32,roughness:.8});for(let k=0;k<6;k++){const a=k/6*PI*2;C(.13,.13,2.8,wm,g,8).position.set(Math.cos(a)*2.6,1.4,Math.sin(a)*2.6)}const rf=P(new THREE.ConeGeometry(3.6,1.4,6),rm,g);rf.position.y=3.4;B(5,.3,5,wm,g).position.y=.15;bake(g);COVO.push(addOBB(C0.x,.5,C0.z,2.6,.5,2.6,0))}
+ {const g=new THREE.Group();g.position.set(C0.x,.2,C0.z);S.add(g);const wm=std({color:0xd8d0c0,roughness:.8}),rm=std({color:0x7a4a32,roughness:.8});for(let k=0;k<6;k++){const a=k/6*PI*2;C(.13,.13,2.8,wm,g,8).position.set(Math.cos(a)*2.6,1.4,Math.sin(a)*2.6)}const rf=P(new THREE.ConeGeometry(3.6,1.4,6),rm,g);rf.position.y=3.4;B(5,.3,5,wm,g).position.y=.15;bake(g);COVO.push(addOBB(C0.x,.5,C0.z,2.6,.5,2.6,0));addOBB(C0.x,3.6,C0.z,2.9,.75,2.9,0)}
  // 長椅
  {const bg=new THREE.Group();S.add(bg);const wd=std({color:0x7a5a3a,roughness:.9});for(let k=0;k<10;k++){const a=k/10*PI*2+.2;const r=14.2;const x=C0.x+Math.cos(a)*r,z=C0.z+Math.sin(a)*r;const g=new THREE.Group();g.position.set(x,.2,z);g.rotation.y=-a+PI/2;bg.add(g);B(1.8,.08,.45,wd,g).position.y=.45;B(1.8,.4,.06,wd,g).position.set(0,.75,.22);for(const s of[-.8,.8])B(.06,.45,.45,darkM,g).position.set(s,.22,0)}bake(bg)}
  // 遊樂場（盪鞦韆、溜滑梯）在遠側
@@ -1009,6 +1018,13 @@ const convoy=[mrap(),mrap()];for(const c of convoy){S.add(c);c.userData.wheels=[
 function placeConvoy(sLead){for(let i=0;i<convoy.length;i++){const s=Math.max(2,sLead-i*CV.gap);const lp=lanePos(RM,s,CV.lane);convoy[i].position.copy(lp.p);convoy[i].rotation.y=lp.yaw;convoy[i].userData.s=s}}
 function roadEdge(R,s,side,inset){const q=sampleAt(R,s);return q.p.clone().addScaledVector(q.r,side*(R.w/2-(inset||0)))}
 function sAtDist(R,dist){let best=0,bd=1e9;for(const q of R.S){const d=Math.abs(Math.hypot(q.p.x-EYE.x,q.p.z-EYE.z)-dist);if(d<bd){bd=d;best=q.s}}return best}
+// 從狙擊位看得到這個點嗎？（被建築、車、樹冠、陽傘擋住就看不到）
+const _vr=new THREE.Ray();
+function losClear(x,y,z){const t=new V(x,y,z);const d=t.clone().sub(EYE);const L=d.length();_vr.origin.copy(EYE);_vr.direction.copy(d).divideScalar(L);for(const b of BOXES){if(obbHas(b,t))continue;const h=obbRay(_vr,b);if(h!==null&&h<L-.25)return false}return true}
+// 站著的人：胸口和頭都要看得到；跪著的人用較低的高度
+function visPt(x,z,y0,kneel){y0=y0??groundY(x,z);const hs=kneel?[.75,1.12]:[1.15,1.6];return hs.every(h=>losClear(x,y0+h,z))}
+// 位置稍微偏一點也要看得到（人不會剛好停在同一點）
+function visRob(x,z,y0,kneel,r){r=r??.35;return visPt(x,z,y0,kneel)&&visPt(x+r,z+r,y0,kneel)&&visPt(x-r,z-r,y0,kneel)&&visPt(x+r,z-r,y0,kneel)&&visPt(x-r,z+r,y0,kneel)}
 // 掩體：找一個離 p 不遠、沒人占用的位置
 function pickCover(p,cur,rmin,rmax){let best=null,bs=1e9;for(const c of COVER){if(c===cur||(c.taken&&c.taken!==p&&!c.taken.down))continue;const d=Math.hypot(c.x-p.root.position.x,c.z-p.root.position.z);if(d<(rmin??2)||d>(rmax??26))continue;const sc=d+Math.random()*8;if(sc<bs){bs=sc;best=c}}return best}
 
@@ -1148,7 +1164,7 @@ const FONT='900 15px "Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-seri
 function tw(t,f){mctx.font=f||FONT;return mctx.measureText(t).width}
 function layoutDims(){W=innerWidth;H=innerHeight;R.setSize(W,H,false);cam.aspect=W/H;scopeR=Math.round(W>H?Math.min(W,H)*.46:W*.47);SCY=H/2+(H>W?Math.round(H*.03):0);$('scope').setAttribute('viewBox',`0 0 ${W} ${H}`);$('ai').setAttribute('viewBox',`0 0 ${W} ${H}`);setFov();drawScope();placeRadio()}
 let CUE_R=[0,0,0,0];
-function placeRadio(){const r=$('radio').style;const side=W/2-scopeR;if(scoped&&W>H&&side>=220){r.left='10px';r.top=(H<=480?112:140)+'px';r.bottom='auto';r.transform='none';r.width=(side-22)+'px';$('radio').classList.add('side')}else{r.left='';r.top='';r.bottom='';r.transform='';r.width='';$('radio').classList.remove('side')}
+function placeRadio(){const r=$('radio').style;const side=W/2-scopeR;const wSide=scoped?side-22:Math.min(400,Math.round(W*.34));if(W>H&&wSide>=200){r.left='calc(10px + env(safe-area-inset-left))';r.top=(H<=480?112:140)+'px';r.bottom='auto';r.transform='none';r.width=wSide+'px';$('radio').classList.add('side')}else{r.left='';r.top='';r.bottom='';r.transform='';r.width='';$('radio').classList.remove('side')}
  CUE_R=[0,0,0,0]}
 function setFov(){cam.near=scoped?1.5:.1;if(scoped&&SCY!==H/2)cam.setViewOffset(W,H,0,-(SCY-H/2),W,H);else cam.clearViewOffset();if(scoped){const th=(30/MAG)*PI/180;cam.fov=th*H/(2*scopeR)*180/PI}else{cam.fov=W>=H?50:Math.min(80,2*Math.atan(Math.tan(31*PI/180)/(W/H))*180/PI)}cam.updateProjectionMatrix()}
 function drawScope(){const sv=$('scope');if(!scoped){sv.style.display='none';return}sv.style.display='block';const cx=W/2,cy=SCY,r=scopeR,col=thermal?'#060606':'#0a0a0a';const u=r/27;// 1 密位的像素
@@ -1256,7 +1272,7 @@ function resolveImpact(h){if(h.kind==='person'){const p=h.p;if(p.down||p.hidden)
 function pick2(a){return a[Math.floor(Math.random()*a.length)]}
 function alertNear(pt,r){for(const p of PEOPLE){if(p.down||p.hidden||p.surr||p.win)continue;const d=Math.hypot(p.root.position.x-pt.x,p.root.position.z-pt.z);
   if(p.kind==='combatant'){if(p.noAlert||p.lock||p.firing||p.alerted>0||d>r)continue;p.alerted=1e9;clearTasks(p);if(p.o.still){p.beh=behHunker}else p.beh=behFight}
-  else if(!p.o.noPanic&&d<r*1.1&&!(p.panic>0)){p.panic=9;clearTasks(p);const a=Math.atan2(p.root.position.x-pt.x,p.root.position.z-pt.z)+frand(-.6,.6);const tx=p.root.position.x+Math.sin(a)*frand(12,20),tz=p.root.position.z+Math.cos(a)*frand(12,20);todo(p,tLegs('crouch'),tPose('cross'),tLook(pt.x,pt.z),tWait(frand(.4,.9)),tLegs('stand'),tPose('idle'),tWalk([[tx,tz]],frand(3,3.8),'run'),tLook(pt.x,pt.z),tPose('cross'),tWait(frand(3,6)),tLook())}}}
+  else if(!p.o.noPanic&&d<r*1.1&&!(p.panic>0)){p.panic=9;clearTasks(p);let tx=0,tz=0;for(let k=0;k<8;k++){const a=Math.atan2(p.root.position.x-pt.x,p.root.position.z-pt.z)+frand(-.6,.6)*(1+k*.3);const r=frand(10,18);tx=p.root.position.x+Math.sin(a)*r;tz=p.root.position.z+Math.cos(a)*r;if(!onAnyRoad(tx,tz,.3)&&visPt(tx,tz)&&visPt((tx+p.root.position.x)/2,(tz+p.root.position.z)/2))break}todo(p,tLegs('crouch'),tPose('cross'),tLook(pt.x,pt.z),tWait(frand(.4,.9)),tLegs('stand'),tPose('idle'),tWalk([[tx,tz]],frand(3,3.8),'run'),tLook(pt.x,pt.z),tPose('cross'),tWait(frand(3,6)),tLook())}}}
 // 開槍之後：戰鬥人員跑到掩體後面，蹲低、瞄準你，過一陣子換位置；掩體只遮住半個身子
 function behFight(p){const tube=p.o.basePose==='carryTube';const base=tube?'carryTube':'highReady',aim=tube?'aimTube':'aimRifle';
  let c=p.cov;if(!c||Math.random()<.32){const n=pickCover(p,c,c?3:0,c?20:30);if(n){if(c)c.taken=null;n.taken=p;p.cov=c=n;todo(p,tLegs('stand'),tPose(base),tWalk([[n.x,n.z]],frand(3.3,4),'run'))}}
@@ -1299,8 +1315,9 @@ function arcRoute(a0,a1,r,n){const R=[];for(let i=0;i<=n;i++){const a=a0+(a1-a0)
 function swRoute(Rd,s0,s1,side,n){const R=[];for(let i=0;i<=n;i++){const q=sampleAt(Rd,s0+(s1-s0)*i/n);const p=q.p.clone().addScaledVector(q.r,side*(Rd.w/2+Rd.sw*.5+frand(-.3,.3)));R.push([p.x,p.z])}return R.concat(R.slice(1,-1).reverse())}
 function kioskFront(k,off,lat){const c=Math.cos(k.ry),sn=Math.sin(k.ry);return[k.x+sn*(k.d/2+off)+c*(lat||0),k.z+c*(k.d/2+off)-sn*(lat||0)]}
 // 中心區裡可以站人的空地、可以走的路線
-function freeHubPt(r0,r1){const c=TL.chat;r0=r0??c[0];r1=r1??c[1];for(let k=0;k<50;k++){const a=frand(-PI,PI),r=frand(r0,r1);const x=C0.x+Math.cos(a)*r,z=C0.z+Math.sin(a)*r;if(onAnyRoad(x,z,.8))continue;if(HUB.type==='square'&&!inRect(x,z,-1.5))continue;const q=new V(x,1,z);if(BOXES.some(b=>Math.abs(b.c.x-x)<30&&Math.abs(b.c.z-z)<30&&obbHas(b,q)))continue;if(PEOPLE.some(p=>Math.hypot(p.root.position.x-x,p.root.position.z-z)<1.6))continue;return[x,z]}return null}
-function hubRoute(){if(TL.walkR){const r=HUB.type==='park'&&Math.random()<.35?RO+1.5:TL.walkR;const a0=frand(-PI,PI),a1=a0+frand(.5,1.1)*(Math.random()<.5?1:-1);return arcRoute(a0,a1,r,4)}
+function freeHubPt(r0,r1,vis){const c=TL.chat;r0=r0??c[0];r1=r1??c[1];for(let k=0;k<80;k++){const a=frand(-PI,PI),r=frand(r0,r1);const x=C0.x+Math.cos(a)*r,z=C0.z+Math.sin(a)*r;if(onAnyRoad(x,z,.8))continue;if(HUB.type==='square'&&!inRect(x,z,-1.5))continue;const q=new V(x,1,z);if(BOXES.some(b=>Math.abs(b.c.x-x)<30&&Math.abs(b.c.z-z)<30&&obbHas(b,q)))continue;if(PEOPLE.some(p=>Math.hypot(p.root.position.x-x,p.root.position.z-z)<1.6))continue;if(vis!==false&&!visPt(x,z))continue;return[x,z]}return null}
+function hubRoute(vis){for(let k=0;k<(vis===false?1:16);k++){const R=hubRoute1();const pts=R.slice(0,Math.ceil(R.length/2)+1);const ok=pts.filter(q=>visPt(q[0],q[1])).length;if(vis===false||ok>=pts.length-(k>10?1:0))return R}return hubRoute1()}
+function hubRoute1(){if(TL.walkR){const r=HUB.type==='park'&&Math.random()<.35?RO+1.5:TL.walkR;const a0=frand(-PI,PI),a1=a0+frand(.5,1.1)*(Math.random()<.5?1:-1);return arcRoute(a0,a1,r,4)}
  const Rd=pick2([RXW,RXE,RM2].filter(Boolean));const st=hubTouch(Rd.S[0].p);const side=Math.random()<.5?1:-1;const a=frand(4,14),b=a+frand(14,26);return swRoute(Rd,st?a:Rd.len-b,st?b:Rd.len-a,side,4)}
 // 一般路人
 const AMBC=[0x8a3a2e,0x2e4a7a,0xd0c8b4,0x6a7a3a,0x9a7a4a,0x4a5a6a,0xa89070,0x5a3a5a,0x707060,0xc8c0b0,0x3a3a3a,0x7a5a3a,0x5a6a7a];
@@ -1323,10 +1340,10 @@ function armed(o){XN++;const lk=o.look||pick2(['fA','fB','fC']);const ai=Math.ra
  const p=mkPerson(Object.assign({id:'X'+XN,kind:'combatant',threat:true,ai,who:'持步槍的人',truth:'持步槍的戰鬥人員',cTxt:'持步槍的戰鬥人員',watch:APPROACH,pose:'lowReady',basePose:'lowReady',beh:behGuard},o,{look:LOOK[lk]}));if(o.route)p.ri=0;if(o.slung)p.itemOverride='rifle';return p}
 function spawnArmed(n){let k=0;const nearM=(x,z)=>PEOPLE.some(q=>Math.hypot(q.root.position.x-x,q.root.position.z-z)<2.5);
  const ks=KIOSK.filter(b=>b.h>3&&hubD(b.x,b.z)<60);
- if(n>k&&ks.length){const b=ks[Math.floor(frand(0,ks.length))];const c=Math.cos(b.ry),s=Math.sin(b.ry);const x=b.x+s*(b.d/2-1.1),z=b.z+c*(b.d/2-1.1);armed({x,z,y0:b.h+.02,ry:b.ry,still:1,who:'屋頂上的人',truth:'在屋頂上把風的戰鬥人員',cTxt:'屋頂上把風的戰鬥人員'});k++}
- if(n>k&&KIOSK.length){for(let t=0;t<KIOSK.length;t++){const b=KIOSK[(t*3+1)%KIOSK.length];const f=kioskFront(b,1.3,1.4);if(nearM(f[0],f[1])||onAnyRoad(f[0],f[1],.3))continue;armed({x:f[0],z:f[1],ry:b.ry,still:1,who:'站在店門口的人',truth:'在店門口站崗的戰鬥人員',cTxt:'站崗的戰鬥人員'});k++;break}}
- if(n-k>=2){const pt=freeHubPt();if(pt){const i1='X'+(XN+1),i2='X'+(XN+2);armed({x:pt[0],z:pt[1],beh:behChat,buddy:i2,pose:'slung',slung:1,look:'fB',who:'聊天的人',truth:'把步槍背在身上的戰鬥人員',cTxt:'背著步槍的戰鬥人員'});armed({x:pt[0]+1.1,z:pt[1]+frand(-.4,.4),beh:behChat,buddy:i1,pose:'slung',slung:1,look:'fC',who:'聊天的人',truth:'把步槍背在身上的戰鬥人員',cTxt:'背著步槍的戰鬥人員'});k+=2}}
- while(k<n){const R=hubRoute();armed({x:R[0][0],z:R[0][1],beh:behWalker,route:R,spd:frand(.9,1.2),who:'走動的人',truth:'持步槍巡邏的戰鬥人員',cTxt:'巡邏的戰鬥人員'});k++}}
+ if(n>k&&ks.length){for(const b of ks.slice().sort(()=>Math.random()-.5)){const c=Math.cos(b.ry),s=Math.sin(b.ry);let done=false;for(const lat of[0,-2,2,-3,3]){const x=b.x+s*(b.d/2-1.1)+c*lat,z=b.z+c*(b.d/2-1.1)-s*lat;if(!visPt(x,z,b.h+.02))continue;armed({x,z,y0:b.h+.02,ry:b.ry,still:1,who:'屋頂上的人',truth:'在屋頂上把風的戰鬥人員',cTxt:'屋頂上把風的戰鬥人員'});k++;done=true;break}if(done)break}}
+ if(n>k&&KIOSK.length){for(let t=0;t<KIOSK.length;t++){const b=KIOSK[(t*3+1)%KIOSK.length];const f=kioskFront(b,1.3,1.4);if(nearM(f[0],f[1])||onAnyRoad(f[0],f[1],.3)||!visRob(f[0],f[1]))continue;armed({x:f[0],z:f[1],ry:b.ry,still:1,who:'站在店門口的人',truth:'在店門口站崗的戰鬥人員',cTxt:'站崗的戰鬥人員'});k++;break}}
+ if(n-k>=2){const pt=freeHubPt();if(pt&&visRob(pt[0],pt[1])&&visRob(pt[0]+1.1,pt[1])){const i1='X'+(XN+1),i2='X'+(XN+2);armed({x:pt[0],z:pt[1],beh:behChat,buddy:i2,pose:'slung',slung:1,look:'fB',who:'聊天的人',truth:'把步槍背在身上的戰鬥人員',cTxt:'背著步槍的戰鬥人員'});armed({x:pt[0]+1.1,z:pt[1]+frand(-.4,.4),beh:behChat,buddy:i1,pose:'slung',slung:1,look:'fC',who:'聊天的人',truth:'把步槍背在身上的戰鬥人員',cTxt:'背著步槍的戰鬥人員'});k+=2}}
+ while(k<n){const R=hubRoute(true);armed({x:R[0][0],z:R[0][1],beh:behWalker,route:R,spd:frand(.9,1.2),who:'走動的人',truth:'持步槍巡邏的戰鬥人員',cTxt:'巡邏的戰鬥人員'});k++}}
 function behJournalist(p){const r=Math.random();if(r<.55)todo(p,tPose('camera'),tFace(C0.x,C0.z),tWait(frand(3,6)));else if(r<.8)todo(p,tPose('cameraDown'),tLook(C0.x+frand(-10,10),C0.z),tWait(frand(2,3.5)),tLook());else{const a=Math.atan2(p.root.position.z-C0.z,p.root.position.x-C0.x)+frand(-.12,.12);todo(p,tPose('cameraDown'),tWalk([arc(a,19.4)],.9),tPose('camera'))}}
 function behDigger(p){todo(p,tLegs('squat'),tPose('dig'),tWait(frand(5,8)),tLegs('crouch'),tLook(p.root.position.x+frand(-20,20),p.root.position.z+30),tWait(1.2),tLook(p.root.position.x+frand(-20,20),p.root.position.z-30),tWait(1.2),tLook())}
 function behCover(p){todo(p,tLegs('kneel'),tPose('aimRifle'),tFace(APPROACH[0],APPROACH[1]),tWait(frand(3,5.5)),tLegs('squat'),tPose('lowReady'),tLook(p.root.position.x+frand(-15,15),p.root.position.z+10),tWait(frand(1,1.8)),tLook())}
@@ -1396,6 +1413,9 @@ function sniperFire(e){e.shots++;const mz=muzzleWorld(e);flashAt(mz,1.1);const d
  const acc=Math.min(.6,.2+.1*(e.shots-1));const hit=Math.random()<acc;later(d/820,()=>{if(!G.playing||G.ending)return;if(hit)playerHit();else nearMiss()})}
 /* ===================== 我被打中 ===================== */
 function later(t,f){G.later.push({t,f})}
+// 丟出去的東西：拋物線落地、翻轉
+const ANIMS=[];function throwItem(type,from,to,dur){const m=groundItem(type,from.x,from.z,0,from.y);ANIMS.push({m,from:from.clone(),to:to.clone(),t:0,dur,spin:frand(5,8)})}
+function updAnims(dt){for(let i=ANIMS.length-1;i>=0;i--){const a=ANIMS[i];a.t+=dt;const u=Math.min(1,a.t/a.dur);a.m.position.lerpVectors(a.from,a.to,u);a.m.position.y+=Math.sin(u*PI)*1.1;a.m.rotation.y=u*a.spin;a.m.rotation.x=u<1?u*a.spin*.6:0;if(u>=1){a.m.position.copy(a.to);a.m.rotation.x=0;ANIMS.splice(i,1)}}}
 function hpUI(){let h='<span>生命</span>';for(let i=0;i<3;i++)h+=`<i class="${i<G.hp?'':'e'}"></i>`;$('hp').innerHTML=h}
 function playerHit(){G.hp=Math.max(0,G.hp-1);hpUI();setScore(-50);const hu=$('hurt');hu.style.transition='none';hu.style.opacity=.85;void hu.offsetWidth;hu.style.transition='opacity 1.8s ease-out';hu.style.opacity=0;
  G.shake=1;if(scoped)setScope(false);snd.hurt();if(navigator.vibrate)try{navigator.vibrate([60,40,90])}catch(e){}
@@ -1409,15 +1429,18 @@ function failMission(){G.playing=false;G.ending=false;G.failT=0;if(scoped)setSco
 function prepRoadside(M){M.shooters=[];(M.rs||[]).forEach((t,i)=>{const p=mkPerson({id:'R'+i,x:C0.x,z:C0.z,look:LOOK[pick2(['fB','fC'])],pose:'lowReady',kind:'combatant',threat:true,ai:['戰鬥人員',Math.round(frand(88,95))],who:'路邊衝出來的人',truth:'從路邊衝出來、對車隊開火的槍手',cTxt:'對車隊開火的槍手',hidden:true,noPanic:1,rs:1});p.aiOn=false;p.noAlert=true;M.shooters.push(p)});
  M.runners=[];(M.runner||[]).forEach((t,i)=>{const p=amb({id:'U'+i,x:C0.x,z:C0.z,hidden:true,noYield:1,noPanic:1,ai:['可疑',Math.round(frand(54,64))],who:'跑過馬路的人',truth:'嚇壞了、想趕快躲回家的居民。',cTxt:'居民，正在逃跑',pose:pick2(['shopbag','idle'])});p.aiOn=false;M.runners.push(p)})}
 const CARZH={white:'白色',silver:'銀色',black:'黑色',red:'紅色',blue:'藍色',green:'綠色',tan:'米色',burned:'燒毀的'};
-function spawnShooter(p){const side=Math.random()<.5?1:-1;const s=Math.min(CV.sEnd-6,G.cs+frand(32,58));if(s<G.cs+15)return false;
- let car=null,bd=1e9,cs=0;for(const c of PCARS){const rd=roadDist(RM,c.x,c.z);if(rd.d>RM.w/2)continue;const q=RM.S[rd.i];const sd=Math.sign((c.x-q.p.x)*q.r.x+(c.z-q.p.z)*q.r.z);if(sd!==side)continue;const ds=Math.abs(q.s-s);if(ds<14&&ds<bd){bd=ds;car=c;cs=q.s}}
- const q=sampleAt(RM,car?cs:s);const k=car?new V(car.x,0,car.z).addScaledVector(q.r,side*1.55):q.p.clone().addScaledVector(q.r,side*(RM.w/2+.9));
+function spawnShooter(p){const C=[];
+ for(let so=30;so<=62;so+=4)for(const side of[-1,1]){const s=Math.min(CV.sEnd-6,G.cs+so);if(s<G.cs+15)continue;
+  let car=null,bd=1e9,cs=0;for(const c of PCARS){const rd=roadDist(RM,c.x,c.z);if(rd.d>RM.w/2)continue;const q=RM.S[rd.i];const sd=Math.sign((c.x-q.p.x)*q.r.x+(c.z-q.p.z)*q.r.z);if(sd!==side)continue;const ds=Math.abs(q.s-s);if(ds<4&&ds<bd){bd=ds;car=c;cs=q.s}}
+  const q=sampleAt(RM,car?cs:s);const k=car?new V(car.x,0,car.z).addScaledVector(q.r,side*1.55):q.p.clone().addScaledVector(q.r,side*(RM.w/2+.9));
+  if(!visRob(k.x,k.z,null,true))continue;C.push({side,car,q,k})}
+ if(!C.length)return false;const c0=C.find(c=>c.car&&Math.random()<.7)||C[Math.floor(Math.random()*C.length)];const {side,car,q,k}=c0;
  const st=q.p.clone().addScaledVector(q.r,side*(RM.w/2+RM.sw+.4)).addScaledVector(q.t,-3);
  p.root.position.set(st.x,groundY(st.x,st.z),st.z);p.hidden=false;p.aiOn=true;p.spawned=1;clearTasks(p);p.yawT=p.root.rotation.y=Math.atan2(-(k.x-st.x),-(k.z-st.z));
  todo(p,tWalk([[k.x,k.z]],3.9,'run'),tLegs('kneel'),tPose('aimRifle'),tFn(q=>{q.firing=1;q.fireT=0;q.nextShot=.5}));
  const ck=car?({white:'carWhite',silver:'carSilver',black:'carBlack',red:'carRed',blue:'carBlue',green:'carGreen',tan:'carTan',burned:'carBurned'}[car.col]||'carNone'):'carNone';
  radioSeq([side>0?'fCR':'fCL',ck],`${side>0?'右':'左'}側有槍手！${car?CARZH[car.col]+'車子旁邊':'在街角'}。`,1);G.stats.threats++;return true}
-function spawnRunner(p){const s=Math.min(CV.sEnd-4,G.cs+frand(30,45));const q=sampleAt(RM,s),q2=sampleAt(RM,Math.min(RM.len,s+6));const side=Math.random()<.5?1:-1;const a=q.p.clone().addScaledVector(q.r,side*(RM.w/2+RM.sw-.3)),b=q.p.clone().addScaledVector(q.r,-side*(RM.w/2+RM.sw-.4)).addScaledVector(q.t,frand(1,3)),c=q2.p.clone().addScaledVector(q2.r,-side*(RM.w/2+RM.sw+1.6));
+function spawnRunner(p){let s=Math.min(CV.sEnd-4,G.cs+frand(30,45));for(let k=0;k<12;k++){const t=Math.min(CV.sEnd-4,G.cs+26+k*3);const q=sampleAt(RM,t);if(visPt(q.p.x,q.p.z)){s=t;break}}const q=sampleAt(RM,s),q2=sampleAt(RM,Math.min(RM.len,s+6));const side=Math.random()<.5?1:-1;const a=q.p.clone().addScaledVector(q.r,side*(RM.w/2+RM.sw-.3)),b=q.p.clone().addScaledVector(q.r,-side*(RM.w/2+RM.sw-.4)).addScaledVector(q.t,frand(1,3)),c=q2.p.clone().addScaledVector(q2.r,-side*(RM.w/2+RM.sw+1.6));
  p.root.position.set(a.x,groundY(a.x,a.z),a.z);p.hidden=false;p.aiOn=true;p.spawned=1;clearTasks(p);todo(p,tWait(.3),tWalk([[b.x,b.z],[c.x,c.z]],4.2,'run'),tFn(q=>{q.hidden=true;q.aiOn=false}));radio('spRunner',1)}
 function muzzleOf(p){const a=p.root.rotation.y;return new V(p.root.position.x-Math.sin(a)*.95,p.root.position.y+(p.leg.hy+.47)*p.sc,p.root.position.z-Math.cos(a)*.95)}
 function updThreats(dt){const M=G.m;if(!M)return;
@@ -1453,10 +1476,17 @@ const MISSIONS=[
   {id:'G2',at:arc(PI*.86,19),ry:PI,look:'fA',pose:'lowReady',basePose:'lowReady',beh:behGuard,watch:APPROACH,buddy:'G1',kind:'combatant',threat:true,ai:['戰鬥人員',92],who:'路邊的人',truth:'持步槍的戰鬥人員',cTxt:'持步槍的戰鬥人員'},
   {id:'G3',at:[SANDPOS.x,SANDPOS.z],ry:PI,look:'fB',pose:'aimRifle',legs:'kneel',coverLegs:'squat',basePose:'aimRifle',beh:behCover,kind:'combatant',threat:true,ai:['戰鬥人員',88],who:'沙包後面的人',truth:'躲在沙包後面的槍手',cTxt:'持步槍的戰鬥人員'},
   {id:'C1',at:arc(PI*.18,16),look:'worker',pose:'shoulderPipe',beh:behWalker,route:arcRoute(PI*.18,PI*.42,16,4),kind:'civilian',ai:['持槍',82],who:'扛著長管的人',truth:'他扛的是一根水管，是修水管的工人。',cTxt:'工人，扛著水管',spd:.85},
-  {id:'C2',at:cp(-23,-8),look:'woman',pose:'basket',beh:behWalker,route:[cp(-23,-8),cp(-21,5),cp(-14,13),cp(-21,5)],kind:'civilian',ai:['平民',90],who:'提著籃子的人',truth:'她提著菜籃，是附近的居民。',cTxt:'居民，提著菜籃',spd:.8}],
+  {id:'C2',at:cp(-18,-6),look:'woman',pose:'basket',beh:behWalker,route:[cp(-18,-6),cp(-16,0),cp(-15,6),cp(-11,12),cp(-15,6),cp(-16,0)],kind:'civilian',ai:['平民',90],who:'提著籃子的人',truth:'她提著菜籃，是附近的居民。',cTxt:'居民，提著菜籃',spd:.8}],
  start(M){radio('c2a')},
  tick(M,dt){const g2=byId('G2'),g1=byId('G1');updGunner(g1);
-  if(!M.surr&&active(g2)&&(G.el>24||(g1.down&&G.el>8))){M.surr=G.el;g2.surr=true;g2.lock=1;g2.confirmed=false;g2.cprog=0;clearTasks(g2);g2.beh=null;if(g2.cov){g2.cov.taken=null;g2.cov=null}const a=g2.root.rotation.y;groundItem('rifle',g2.root.position.x-Math.sin(a)*.6,g2.root.position.z-Math.cos(a)*.6,a+.4,g2.root.position.y+.05);g2.itemOverride=null;todo(g2,tLegs('stand'),tPose('up'),tFace(EYE.x,EYE.z),tLook(EYE.x,EYE.z),tWait(9),tWalk([cp(-14,15)],.55),tLegs('kneel'),tWait(999));radio('spLook')}
+  if(!M.surr&&active(g2)&&(G.el>24||(g1.down&&G.el>8))){M.surr=G.el;g2.surr=true;g2.lock=1;g2.confirmed=false;g2.cprog=0;clearTasks(g2);g2.beh=null;if(g2.cov){g2.cov.taken=null;g2.cov=null}
+   // 投降：先面向狙擊位，雙手把步槍高舉過頭，丟到身旁地上，再高舉雙手、往前走幾步、跪下雙手抱頭
+   const e=new V(EYE.x-g2.root.position.x,0,EYE.z-g2.root.position.z).normalize();const pos0=g2.root.position.clone();
+   // 投降：面向狙擊位 → 雙手把步槍橫舉過頭 → 放低到腰前 → 蹲下把槍平放在身前地上 → 站起來雙手高舉 → 慢慢後退兩步 → 之後走到空地跪下、雙手抱頭
+   todo(g2,tLegs('stand'),tPose('lowReady'),tFace(EYE.x,EYE.z),tLook(EYE.x,EYE.z),tWait(.8),tPose('rifleOverhead'),tWait(2.2),tPose('rifleLower'),tWait(.9),tLegs('squat'),tPose('rifleGround'),tWait(1.2),
+    tFn(q=>{const Y=q.root.rotation.y,sc=q.sc;const fw=new V(-Math.sin(Y),0,-Math.cos(Y)),rt=new V(Math.cos(Y),0,-Math.sin(Y));const o=q.root.position.clone().addScaledVector(rt,.45*sc).addScaledVector(fw,.55*sc);groundItem('rifle',o.x,o.z,Math.atan2(-rt.x,-rt.z),groundY(o.x,o.z)+.04);q.itemOverride=null}),
+    tWait(.5),tLegs('stand'),tWait(.4),tPose('up'),tWait(1.2),Object.assign(tWalk([[pos0.x-e.x*2.2,pos0.z-e.z*2.2]],.45),{back:1}),tFace(EYE.x,EYE.z),tLook(EYE.x,EYE.z),tWait(6),tWalk([cp(-14,15)],.5),tFace(EYE.x,EYE.z),tLegs('kneel'),tWait(.8),tPose('handsHead'),tWait(999));
+   radio('spLook')}
   if(M.surr&&!M.note&&G.el-M.surr>7){M.note=1;radio('c2b')}},
  card:{t:'投降的人不能打',body:'<div class="law">「被承認為或在當時情況下應被承認為失去戰鬥力的人，不應成為攻擊的對象。」以下的人屬於失去戰鬥力：在敵方權力下的人、<b>明確表示投降意圖的人</b>、因受傷或疾病而失去知覺或無法自衛的人——只要他不再有敵對行為、也不企圖脫逃。<br>——《日內瓦公約第一附加議定書》（1977）第41條</div><ul><li>關鍵字是「<b>應被承認</b>」：看得出來就要算數，不能用「我沒注意到」當理由。</li><li>這一關的人工智慧始終沒有更新：它把<b>舉手的人</b>仍標成戰鬥人員 92%。機器的判斷有時間差，人的狀態卻一直在變。</li></ul>',src:'出處：《日內瓦公約第一附加議定書》（1977）第41條，聯合國人權事務高級專員辦事處（OHCHR）公布之條約全文。'}},
 {name:'第三關　熱影',sub:'夜間｜工業區十字路口',map:2,time:'night',dur:85,convoyAt:32,thermal:true,ambient:7,armed:3,win:[14,40],rs:[8],runner:[14],
@@ -1466,7 +1496,7 @@ const MISSIONS=[
   {id:'H1',iedSpot:1,look:'fC',pose:'dig',legs:'squat',beh:behDigger,kind:'combatant',threat:true,ai:['可疑',67],who:'蹲在路邊的人',truth:'在路邊埋設爆裂物，背上有步槍',cTxt:'在路邊埋爆裂物的人',noAlert:1},
   {id:'H2',iedWalk:1,look:'farmer',pose:'shoulderShovel',beh:behWalker,kind:'civilian',ai:['持槍',81],who:'扛著鏟子的人',truth:'他扛的是鏟子，是收工回家的農民。',cTxt:'農民，扛著鏟子',spd:.9},
   {id:'H3',at:cp(-10,10),ry:PI,look:'fB',pose:'lowReady',basePose:'lowReady',beh:behGuard,watch:APPROACH,kind:'combatant',threat:true,ai:['持槍',93],who:'站在路口的人',truth:'持步槍的把風者',cTxt:'持步槍的戰鬥人員'},
-  {id:'H4',at:cp(18,12),look:'shepherd',pose:'staff',beh:behWalker,route:[cp(18,12),cp(16,24),cp(26,19),cp(16,24)],kind:'civilian',ai:['持槍',77],who:'拿著長棍的人',truth:'他拿的是牧羊杖，正在趕羊。',cTxt:'牧羊人，拿著牧羊杖',spd:.55},
+  {id:'H4',at:cp(18,12),look:'shepherd',pose:'staff',beh:behWalker,route:[cp(18,12),cp(14,16),cp(18,20),cp(16,24),cp(18,20),cp(14,16)],kind:'civilian',ai:['持槍',77],who:'拿著長棍的人',truth:'他拿的是牧羊杖，正在趕羊。',cTxt:'牧羊人，拿著牧羊杖',spd:.55},
   {id:'H5',kiosk:[0,.7,-1.2],legs:'sit',pose:'sit',beh:behChat,buddy:'H6',look:'sit1',kind:'civilian',ai:['平民',84],who:'坐在門口的人',truth:'坐在門口聊天的居民。',cTxt:'居民，坐著聊天'},
   {id:'H6',kiosk:[0,.7,.4],legs:'sit',pose:'sit',beh:behChat,buddy:'H5',look:'sit2',kind:'civilian',ai:['平民',80],who:'坐在門口的人',truth:'坐在門口聊天的居民。',cTxt:'居民，坐著聊天'}],
  setup(M){M.sheep=[sheep(C0.x+20,C0.z+14,0),sheep(C0.x+22,C0.z+16,.3),sheep(C0.x+19,C0.z+17,-.2)];const e=IED;const box=B(.4,.25,.3,std({color:0x5a5040,roughness:.9}));box.position.set(e.x+.5,.12,e.z+.4);EXTRA.push(box)},
@@ -1507,7 +1537,7 @@ function convoyHit(kind,at){if(G.convoyDmg==='heavy')return;G.convoyDmg=kind;con
 /* ===================== 關卡流程 ===================== */
 function loadMission(i){G.playing=false;G.paused=false;if(scoped)setScope(false);if(thermal)setThermal(false);radioClear();clearPeople();WEV.length=0;
  const li=MISSIONS[i].map;if(TOWN!==li){$('loadT').textContent='佈置地圖：'+LAYOUTS[li].name+'…';$('loadS').textContent='每一關的城鎮都不一樣';$('load').style.display='flex';setTimeout(()=>{buildTown(li);$('load').style.display='none';loadMission2(i)},80);return}loadMission2(i)}
-function loadMission2(i){G.mi=i;const M=Object.assign({},MISSIONS[i]);G.m=M;for(const f of G.fx)S.remove(f.o);G.fx.length=0;G.impacts.length=0;G.later.length=0;
+function loadMission2(i){G.mi=i;const M=Object.assign({},MISSIONS[i]);G.m=M;for(const f of G.fx)S.remove(f.o);G.fx.length=0;G.impacts.length=0;G.later.length=0;ANIMS.length=0;
  setTime(M.time);APPROACH[0]=C0.x+.5;APPROACH[1]=C0.z+45;S_IED=sAtDist(RM,158);IED=roadEdge(RM,S_IED,1,.7);for(const c of COVER)c.taken=null;
  AMBN=0;XN=0;seed=1000+i*77;
  G.stats={score:0,shots:0,kills:0,confKills:0,trust:0,confirms:0,blocked:0,miss:0,threats:0};
@@ -1573,7 +1603,7 @@ function step(dt,now){frameN++;
  if(!perfDone&&G.playing&&!G.paused){perfAcc+=dt;perfN++;if(perfAcc>3){perfDone=true;const ms=perfAcc/perfN*1000;if(ms>38&&PR>1){PR=1;R.setPixelRatio(1);R.setSize(W,H,false)}if(ms>55){sun.castShadow=false;R.shadowMap.needsUpdate=true}}}
  const run=G.playing&&!G.paused;
  if(run){G.el+=dt;if(!G.convoyRun&&!G.convoyHalt)G.T-=dt;$('tm').textContent=G.convoyHalt&&G.T>0?'停車':T2(G.T);$('timer').classList.toggle('warn',G.T<15);
-  G.m.tick(G.m,dt);updConvoy(dt);updThreats(dt);for(let i=G.later.length-1;i>=0;i--){const l=G.later[i];l.t-=dt;if(l.t<=0){G.later.splice(i,1);l.f()}}
+  G.m.tick(G.m,dt);updConvoy(dt);updThreats(dt);updAnims(dt);for(let i=G.later.length-1;i>=0;i--){const l=G.later[i];l.t-=dt;if(l.t<=0){G.later.splice(i,1);l.f()}}
   if(G.failT>0){G.failT-=dt;if(G.failT<=0){failMission()}}for(const p of PEOPLE){if(p.yieldT>0)p.yieldT-=dt;if(p.alerted>0)p.alerted-=dt;if(p.panic>0)p.panic-=dt}
   for(let i=G.impacts.length-1;i>=0;i--){const im=G.impacts[i];im.t-=dt;if(im.t<=0){G.impacts.splice(i,1);resolveImpact(im.h)}}
   if(G.bolt>0){G.bolt-=dt;G.boltT=(G.boltT||0)+dt;if(G.boltT>.48&&!G.ejected){G.ejected=1;if(!scoped)ejectCase()}if(G.bolt<=0){G.bolt=0;G.ejected=0;if(G.ammo<=0)doReload();ammoUI()}}
@@ -1614,7 +1644,7 @@ const KEY={l:0,r:0,u:0,d:0};
 let drag=null;const wrap=$('wrap');
 function sens(){return .0042*(scoped?cam.fov/50*1.15:1)}
 wrap.addEventListener('pointerdown',e=>{if(e.target.closest('.cb,.ib'))return;if(e.button===2){if(G.playing)setScope(!scoped);return}if(drag)return;drag={id:e.pointerId,x:e.clientX,y:e.clientY,x0:e.clientX,y0:e.clientY,t:performance.now(),mouse:e.pointerType==='mouse'};snd.resume()});
-window.addEventListener('pointermove',e=>{if(!drag||e.pointerId!==drag.id)return;const dx=e.clientX-drag.x,dy=e.clientY-drag.y;drag.x=e.clientX;drag.y=e.clientY;G.yawT+=dx*sens();G.pitchT+=dy*sens()*(W>H?1:1)});
+window.addEventListener('pointermove',e=>{if(!drag||e.pointerId!==drag.id)return;const dx=e.clientX-drag.x,dy=e.clientY-drag.y;drag.x=e.clientX;drag.y=e.clientY;G.yawT-=dx*sens();G.pitchT-=dy*sens()});
 function endDrag(e){if(!drag||e.pointerId!==drag.id)return;const moved=Math.hypot(e.clientX-drag.x0,e.clientY-drag.y0);if(drag.mouse&&moved<5&&performance.now()-drag.t<350&&e.button===0)fire();drag=null}
 window.addEventListener('pointerup',endDrag);window.addEventListener('pointercancel',endDrag);
 wrap.addEventListener('contextmenu',e=>e.preventDefault());
@@ -1638,7 +1668,7 @@ buildTown(0);setTime('noon');layoutDims();hpUI();
 $('score').textContent='得分 0';ammoUI();applyFilter();$('load').style.display='none';if(TEST)window.T_={CONVOY,get TECH(){return TECH},get RM(){return RM},get WINC(){return WINC},get COVER(){return COVER},get KIOSK(){return KIOSK},WEV,startWin,playerHit,groundY,buildTown,EYE,C0,sampleAt,trace,aimRay,personH,PEOPLE,byId,setScope,setMag,fire,G,cam,RIG,loadMission,beginMission,
  aim(x,y,z){for(let i=0;i<3;i++){RIG.updateMatrixWorld(true);const e=RIG.localToWorld(CAM_SC.clone());const d=new V(x,y,z).sub(e);G.yaw=G.yawT=Math.atan2(-d.x,-d.z);G.pitch=G.pitchT=Math.atan2(d.y,Math.hypot(d.x,d.z));RIG.rotation.set(G.pitch,G.yaw,0)}},
  aimP(id,f){const p=byId(id);const h=personH(p);this.aim(p.root.position.x,p.root.position.y+h*(f??.6),p.root.position.z)},
- info(){let tri={};S.traverse(o=>{if(o.isMesh&&o.geometry){const g=o.geometry;const n=(g.index?g.index.count:g.attributes.position.count)/3*(o.isInstancedMesh?o.count:1);const k=o.isInstancedMesh?'crowd':(o.material.map===asphT?'asph':o.material===tileM?'tile':WALLS.includes(o.material)||WALLD.includes(o.material)?'walls':glassM.includes(o.material)?'glass':Object.values(PAINT).includes(o.material)||Object.values(VM).includes(o.material)?'cars':'other');tri[k]=(tri[k]||0)+Math.round(n)}});return JSON.stringify(tri)+JSON.stringify(R.info.render)+' prog:'+R.info.programs.length+' geo:'+R.info.memory.geometries},peekConvoy(i,d,h,a){G.peek={p:null,obj:CONVOY[i],d,h,a,cam:new THREE.PerspectiveCamera(40,W/H,.1,2000)}},peek(id,d,h,a,at){G.peek=id===null?null:{p:id?byId(id):null,d:d||4,h:h||.6,a:a||0,at:at?new V(...at):null,cam:new THREE.PerspectiveCamera(40,W/H,.1,2000)}},heavy(){const a=[];S.traverse(o=>{if(o.isMesh&&!o.isInstancedMesh){const g=o.geometry;const n=(g.index?g.index.count:g.attributes.position.count)/3;const m=o.material;a.push([Math.round(n),(m.color?m.color.getHexString():'')+(m.map?'+map':'')+(m.transparent?'T':''),o.parent&&o.parent!==S?'child':''])}});a.sort((x,y)=>y[0]-x[0]);return JSON.stringify(a.slice(0,22))},prof(){const t=[];let a=performance.now();const m=()=>{t.push((performance.now()-a).toFixed(1));a=performance.now()};R.render(S,cam);m();R.shadowMap.needsUpdate=true;R.render(S,cam);m();crowdUpdate(.016,0);m();aiTick=0;drawAI(.3);m();updThreats(.016);m();G.m.tick(G.m,.016);updConvoy(.016);m();trace(aimRay());m();radioUpdate(.016);m();return JSON.stringify(t)+' calls '+R.info.render.calls+' tri '+R.info.render.triangles+' boxes '+BOXES.length+' people '+PEOPLE.length},sim(sec){const n=Math.round(sec/.05);for(let i=0;i<n;i++)step(.05,performance.now());return G.el.toFixed(2)},clipTest(k){return new Promise(r=>{snd.init();getClip(k,b=>r(b?('dur '+b.duration.toFixed(2)+' sr '+b.sampleRate):'null'))})},labels(){return PEOPLE.filter(p=>p.lblRect&&p.lblF===drawN&&!p.down&&!p.hidden).map(p=>p.lblRect)}};
+ info(){let tri={};S.traverse(o=>{if(o.isMesh&&o.geometry){const g=o.geometry;const n=(g.index?g.index.count:g.attributes.position.count)/3*(o.isInstancedMesh?o.count:1);const k=o.isInstancedMesh?'crowd':(o.material.map===asphT?'asph':o.material===tileM?'tile':WALLS.includes(o.material)||WALLD.includes(o.material)?'walls':glassM.includes(o.material)?'glass':Object.values(PAINT).includes(o.material)||Object.values(VM).includes(o.material)?'cars':'other');tri[k]=(tri[k]||0)+Math.round(n)}});return JSON.stringify(tri)+JSON.stringify(R.info.render)+' prog:'+R.info.programs.length+' geo:'+R.info.memory.geometries},peekConvoy(i,d,h,a){G.peek={p:null,obj:CONVOY[i],d,h,a,cam:new THREE.PerspectiveCamera(40,W/H,.1,2000)}},peek(id,d,h,a,at){G.peek=id===null?null:{p:id?byId(id):null,d:d||4,h:h||.6,a:a||0,at:at?new V(...at):null,cam:new THREE.PerspectiveCamera(40,W/H,.1,2000)}},heavy(){const a=[];S.traverse(o=>{if(o.isMesh&&!o.isInstancedMesh){const g=o.geometry;const n=(g.index?g.index.count:g.attributes.position.count)/3;const m=o.material;a.push([Math.round(n),(m.color?m.color.getHexString():'')+(m.map?'+map':'')+(m.transparent?'T':''),o.parent&&o.parent!==S?'child':''])}});a.sort((x,y)=>y[0]-x[0]);return JSON.stringify(a.slice(0,22))},prof(){const t=[];let a=performance.now();const m=()=>{t.push((performance.now()-a).toFixed(1));a=performance.now()};R.render(S,cam);m();R.shadowMap.needsUpdate=true;R.render(S,cam);m();crowdUpdate(.016,0);m();aiTick=0;drawAI(.3);m();updThreats(.016);m();G.m.tick(G.m,.016);updConvoy(.016);m();trace(aimRay());m();radioUpdate(.016);m();return JSON.stringify(t)+' calls '+R.info.render.calls+' tri '+R.info.render.triangles+' boxes '+BOXES.length+' people '+PEOPLE.length},sim(sec){const n=Math.round(sec/.05);for(let i=0;i<n;i++)step(.05,performance.now());return G.el.toFixed(2)},clipTest(k){return new Promise(r=>{snd.init();getClip(k,b=>r(b?('dur '+b.duration.toFixed(2)+' sr '+b.sampleRate):'null'))})},dbgR(){return JSON.stringify(G.m.shooters.map(q=>({sp:q.spawned,h:q.hidden,pos:q.root.position.toArray().map(v=>+v.toFixed(1)),hy:q.leg.hy.toFixed(2),task:q.task&&q.task.t,n:q.tasks.length,path:q.path&&q.path.map(v=>[v.x|0,v.z|0]),vis:visPt(q.root.position.x,q.root.position.z,q.root.position.y,true)})))},visGrid(pts){return pts.map(([dx,dz])=>visPt(C0.x+dx,C0.z+dz)?1:0).join('')},audit(){return PEOPLE.filter(q=>!q.hidden&&!q.down&&!q.win&&(q.threat||(!/^A/.test(q.o.id)&&!(q.panic>0)))).map(q=>{const pos=q.root.position;const kn=q.leg.hy<.8;return[q.o.id,visPt(pos.x,pos.z,pos.y,kn)?1:0,pos.x|0,pos.z|0]})},labels(){return PEOPLE.filter(p=>p.lblRect&&p.lblF===drawN&&!p.down&&!p.hidden).map(p=>p.lblRect)}};
 window.__ready=true;window.__bootMs=performance.now();requestAnimationFrame(tick);
 
 }
